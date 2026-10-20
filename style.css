@@ -1,0 +1,255 @@
+/* ==========================================================
+   Portofolio - style.css (tema gelap)
+   Daftar isi: 1. Variabel  2. Dasar  3. Navbar  4. Tombol
+               5. Hero & judul halaman  6. Konten  7. Form  8. Footer
+   ========================================================== */
+
+/* 1. Variabel warna */
+:root {
+  --bg: #0f1221;          /* latar halaman */
+  --surface: #171b2e;     /* kartu & form */
+  --surface-2: #1f2440;   /* lapisan kedua */
+  --line: #2a3050;        /* garis pembatas */
+  --text: #e9ecf8;
+  --mute: #9aa3c7;
+  --accent: #5ad1e6;      /* aksen utama (cyan) */
+  --accent-2: #8b7cf6;    /* aksen pendamping (violet) */
+  --radius: 14px;
+
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-body-font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* 2. Dasar */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.text-mute {
+  color: var(--mute);
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 3. Navbar */
+.navbar {
+  background: rgba(15, 18, 33, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar-brand {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.navbar-brand span {
+  color: var(--accent);
+}
+
+.nav-link {
+  color: var(--mute);
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+}
+
+.nav-link.active {
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+/* 4. Tombol */
+.btn-ink {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  color: #08202a;
+  font-weight: 600;
+}
+
+.btn-ink:hover,
+.btn-ink:focus-visible {
+  background: #86e0f0;
+  border-color: #86e0f0;
+  color: #08202a;
+}
+
+.btn-line {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+.btn-line:hover {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* 5. Hero & judul halaman */
+.hero {
+  background-image:
+    radial-gradient(ellipse 60% 70% at 85% 0%, rgba(139, 124, 246, 0.28), transparent 70%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: auto, 24px 24px;
+  border-bottom: 1px solid var(--line);
+  padding: 6.5rem 0 5.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800;
+  max-width: 16ch;
+}
+
+.hero mark {
+  background: none;
+  color: var(--accent);
+  padding: 0;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 52ch;
+}
+
+.page-head {
+  border-bottom: 1px solid var(--line);
+  padding: 4rem 0 2.5rem;
+}
+
+.page-head h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 800;
+}
+
+/* 6. Konten */
+.section {
+  padding: 3.5rem 0;
+}
+
+.note {
+  border-left: 3px solid var(--accent-2);
+  padding-left: 1rem;
+}
+
+/* Kartu proyek */
+.card-proj {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  height: 100%;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.card-proj:hover {
+  border-color: var(--accent);
+}
+
+.card-proj .thumb {
+  align-items: center;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  color: var(--accent);
+  display: flex;
+  font: 800 2.6rem 'Sora', sans-serif;
+  height: 150px;
+  justify-content: center;
+}
+
+.badge-tech {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--mute);
+  font-weight: 500;
+}
+
+/* Progress bar keahlian */
+.progress {
+  background: var(--surface-2);
+  border-radius: 999px;
+  height: 0.6rem;
+}
+
+.progress-bar {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* Timeline pendidikan */
+.timeline {
+  border-left: 2px solid var(--line);
+  margin-left: 0.4rem;
+}
+
+.timeline li {
+  list-style: none;
+  padding: 0 0 1.6rem 1.5rem;
+  position: relative;
+}
+
+.timeline li::before {
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  content: "";
+  height: 16px;
+  left: -9px;
+  position: absolute;
+  top: 0.4rem;
+  width: 16px;
+}
+
+/* 7. Form */
+.form-control {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+.form-control:focus {
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.25rem rgba(90, 209, 230, 0.25);
+  color: var(--text);
+}
+
+.input-group > .btn-line {
+  border-radius: 0 10px 10px 0;
+}
+
+.auth-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(139, 124, 246, 0.15);
+  padding: 2rem;
+}
+
+/* 8. Footer */
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 0.95rem;
+  padding: 1.5rem 0;
+}
